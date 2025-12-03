@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  Referrer-Policy -->
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!--  Combine both CSP rules into ONE line (browsers ignore the second one otherwise) -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'nonce-{{NONCE}}' 'strict-dynamic';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self' data:;
+    connect-src 'self' https://*.vercel.app https://*.google-analytics.com;  <!-- add your APIs you use -->
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
+  <!--  Classic clickjacking protection (keep both – some old browsers only read this) -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+
+  <!--  MIME sniffing protection -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!--  Extra-hardening headers (2025 best practice) -->
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+
+  <!-- NEW: Stop Google FLoC and other tracking (now deprecated but still good) -->
+  <meta name="permissions-policy" content="interest-cohort=()">
+
+  <!--  NEW: Tell search engines not to use this site for AI training (optional but cool in 2025) -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, noarchive">
+  <meta name="ai-bot" content="noindex"> <!-- blocks GPTBot, Claude, etc. -->
+
+  <!--  NEW: Super important – prevent tabnabbing from external links -->
+  <!-- Add this to EVERY <a href="..." target="_blank"> in your body later -->
+  <!-- Example: <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> -->
+
+  <title>Katana's Portfolio – Virtual Assistant × Developer × Cyber Security</title>
+
+  <!-- 9. Optional but looks pro – add a favicon and a short description -->
+  <meta name="description" content="Katana – Helping startups save time, ship secure code, and stay protected.">
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+  <!-- When you add external links, always do this -->
+  <!-- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
+
+</body>
+</html>
