@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- FIXED CSP: One line, proper breaks, added missing directives -->
+   <!-- CSP -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
@@ -26,20 +25,105 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Katana's Portfolio – Virtual Assistant × Developer × Cyber Security</title>
-
-  <a href="https://www.flaticon.com/free-icons/favicon" title="favicon icons"> </a>
-  <link rel="icon" href="assets/Images/images/search.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/web.css">
-  <link rel="stylesheet" href="css/cyber.css">
-  <link rel="stylesheet" href="css/virtual.css">
-  
-
+  <title>Portfolio Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- When you add external links, always do this -->
-  <!-- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="container">
+    <div class="logo">Katana </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="virtual-assistant.html">Virtual Assistant</a>
+      <a href="software-development.html">Software Development</a>
+      <a href="cyber-security.html">Cyber Security</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
 
+  <!-- Hero Header Section -->
+  <section class="hero section">
+    <div class="container">
+      <!--<img src="images/your-photo.jpg" alt="Your Photo" style="width: 150px; border-radius: 50%;-->
+      <h1> Hi, I'm Katana Ngumbao</h1>
+      <h2>Virtual Assistant + Developer + Cyber Security Enthusiast</h2>
+      <p>I help startups save hundreds of hours, ship secure apps, and stay protected.</p>
+      <div class="features">
+        <div class="feature-card"><h3>Virtual Assistant</h3><p>Delegate tasks.</p><a href="virtual-assistant.html">Learn More</a></div>
+        <div class="feature-card"><h3>Software Development</h3><p>Build apps.</p><a href="software-development.html">Learn More</a></div>
+        <div class="feature-card"><h3>Cyber Security</h3><p>Secure systems.</p><a href="cyber-security.html">Learn More</a></div>
+      </div>
+      <a href="resume.html">View Full Resume</a>
+      <div class="skills-bar">
+        <div class="skill"><div class="skill-fill" style="width: 80%;"></div> Skill 1</div>
+        <div class="skill"><div class="skill-fill" style="width: 90%;"></div> Skill 2</div>
+        <div class="skill"><div class="skill-fill" style="width: 70%;"></div> Skill 3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features List Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2>Core Offerings</h2>
+      <div class="features">
+        <div class="feature-card">Virtual Assistant: Short desc.<a href="#">Learn More</a></div>
+        <div class="feature-card">Software Development: Short desc.<a href="#">Learn More</a></div>
+        <div class="feature-card">Cyber Security: Short desc.<a href="#">Learn More</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio List Section -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <h2>Latest Work</h2>
+      <div class="portfolio-list">
+        <div class="portfolio-item"><img src="images/project-va.jpg" alt="VA Project"><p>VA Example</p></div>
+        <div class="portfolio-item"><img src="images/project-sd.jpg" alt="SD Project"><p>SD Example</p></div>
+        <div class="portfolio-item"><img src="images/project-cs.jpg" alt="CS Project"><p>CS Example</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>3-4 lines intro to your background and approach.</p>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="testimonial">"Great work!" - Client 1</div>
+      <div class="testimonial">"Highly recommend." - Client 2</div>
+      <div class="testimonial">"Excellent service." - Client 3</div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta section" id="cta">
+    <div class="container">
+      <h2>Book a Free 15-Min Call</h2>
+      <button>Discuss Your Needs</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+    <!-- When you add external links, always do this -->
+  <!-- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
+  </footer>
 </body>
 </html>

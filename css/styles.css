@@ -1,0 +1,311 @@
+/* ====================== MODERN PORTFOLIO CSS - NAVY BLUE NAVBAR (#000080) ====================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar - Navy Blue #000080 */
+.navbar {
+  background: #05052b;                     /* Your requested navy blue */
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 128, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 128, 0.98);
+  padding: 0.8rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 0;
+  background: #ffd700;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hero & Sections */
+.section {
+  padding: 100px 0;
+}
+
+.hero {
+  padding: 160px 0 110px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,...') center/cover; /* Optional subtle pattern */
+  opacity: 0.05;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  margin-bottom: 1rem;
+  animation: fadeUp 1s ease;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero h2 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+/* Cards Grid - Responsive */
+.features,
+.portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card,
+.portfolio-item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover,
+.portfolio-item:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 25px 50px rgba(255, 182, 193, 0.5); /* Pinkish glow on hover */
+}
+
+.feature-card img,
+.portfolio-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.feature-card:hover img,
+.portfolio-item:hover img {
+  transform: scale(1.12);
+}
+
+.card-content {
+  padding: 1.8rem;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #1e293b;
+}
+
+.card-content p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #ffd700;
+  color: #000080;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 1rem 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+  font-size: 1.05rem;
+}
+
+.btn:hover {
+  background: #ffeb3b;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Testimonials */
+.testimonial {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  margin: 3rem auto;
+  font-style: italic;
+  position: relative;
+  border-left: 5px solid #ffd700;
+}
+
+.testimonial::before {
+  content: '“';
+  font-size: 8rem;
+  color: #ffd700;
+  opacity: 0.15;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  font-family: Georgia, serif;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, #fecdd3 0%, #fbbf24 100%);
+  color: #1e293b;
+  text-align: center;
+  padding: 90px 20px;
+  border-radius: 24px;
+  margin: 5rem 0;
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+}
+
+/* Footer */
+.footer {
+  background: #000080;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.9s ease forwards; }
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 3.2rem; }
+  .hero h2 { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background: #000080;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease;
+    gap: 3rem;
+  }
+
+  .nav-links.active { left: 0; }
+
+  .menu-toggle { display: flex; }
+
+  .hero { padding: 140px 0 90px; }
+  .hero h1 { font-size: 2.8rem; }
+  .section { padding: 80px 0; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.4rem; }
+  .hero h2 { font-size: 1.4rem; }
+  .container { padding: 0 15px; }
+  .features, .portfolio-list { gap: 1.5rem; }
+  .btn { padding: 12px 28px; font-size: 1rem; }
+}

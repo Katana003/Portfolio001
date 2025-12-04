@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSP -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self' data:;
+    connect-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  ">
+
+  <!-- All other metas (fixed spacing) -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <title>Resume</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/resume.css">
+  
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+   <nav class="navbar">
+  <div class="container">
+    <div class="logo">Your Name</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="virtual-assistant.html">Virtual Assistant</a>
+      <a href="software-development.html">Software Development</a>
+      <a href="cyber-security.html">Cyber Security</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </div>
+</nav>
+
+  <!-- Header Section -->
+  <section class="hero section">
+    <div class="container">
+      <h1>Full Resume</h1>
+      <p>Experience, Skills, and Achievements.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section">
+    <div class="container">
+      <h2>Professional Summary</h2>
+      <p>Comprehensive background, focus areas, values.</p>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">Role 1, Company, Dates: Achievements.</div>
+        <div class="timeline-item">Role 2, Company, Dates: Achievements.</div>
+        <!-- Add more -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Features List Section (Skills) -->
+  <section class="section">
+    <div class="container">
+      <h2>Core Skills</h2>
+      <div class="features">
+        <div class="feature-card">Technical: List.</div>
+        <div class="feature-card">Productivity Tools: List.</div>
+        <div class="feature-card">Soft Skills: List.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section (Optional) -->
+  <section class="section">
+    <div class="container">
+      <h2>Collaborations</h2>
+      <p>Highlight mentors/teams if relevant.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="portfolio-list">
+        <div class="portfolio-item"><img src="images/cert1.jpg" alt="Cert 1"></div>
+        <!-- Add more -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Key Metrics</h2>
+      <p>Projects shipped: 10 | Hours saved: 500 | Audits: 20</p>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Endorsements</h2>
+      <div class="testimonial">"Outstanding professional." - Colleague</div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta section">
+    <div class="container">
+      <h2>Connect</h2>
+      <button>Download PDF</button> <button>LinkedIn</button> <button>Schedule Call</button>
+    </div>
+  </section>
+
+  <!-- Footer  -->
+   <footer class="footer">
+    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+  </footer>
+</body>
+</html>
