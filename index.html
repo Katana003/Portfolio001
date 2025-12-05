@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
+  <meta http-equiv="Content-Security-Policy" content=" default-src 'self';
     script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: https:;
@@ -17,14 +16,14 @@
     frame-ancestors 'none';
     upgrade-insecure-requests;
   ">
-
-  <!-- All other metas (fixed spacing) -->
+  <!-- All other metas  -->
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <meta http-equiv="Content-Security-Policy"content="default-src 'self'; script-src 'self'">
   <title>Portfolio Home</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/script.js" defer></script>
@@ -52,15 +51,28 @@
   <section class="hero section">
     <div class="container">
       <!--<img src="images/your-photo.jpg" alt="Your Photo" style="width: 150px; border-radius: 50%;-->
-      <h1> Hi, I'm Katana Ngumbao</h1>
+      <h1> Hi, I’m Katana Ngumbao</h1>
       <h2>Virtual Assistant + Developer + Cyber Security Enthusiast</h2>
       <p>I help startups save hundreds of hours, ship secure apps, and stay protected.</p>
       <div class="features">
-        <div class="feature-card"><h3>Virtual Assistant</h3><p>Delegate tasks.</p><a href="virtual-assistant.html">Learn More</a></div>
-        <div class="feature-card"><h3>Software Development</h3><p>Build apps.</p><a href="software-development.html">Learn More</a></div>
-        <div class="feature-card"><h3>Cyber Security</h3><p>Secure systems.</p><a href="cyber-security.html">Learn More</a></div>
+        <div class="feature-card">
+          <h3>Virtual Assistant</h3>
+          <p>Delegate tasks.</p>
+          <a href="virtual-assistant.html">Learn More</a>
+        
+        </div>
+        <div class="feature-card">
+          <h3>Software Development</h3>
+          <p>Build apps.</p>
+          <a href="software-development.html">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <h3>Cyber Security</h3>
+/          <p>Secure systems.</p>
+          <a href="cyber-security.html">Learn More</a>
+        </div>
       </div>
-      <a href="resume.html">View Full Resume</a>
+      <a href="about.html">View About Me</a>
       <div class="skills-bar">
         <div class="skill"><div class="skill-fill" style="width: 80%;"></div> Skill 1</div>
         <div class="skill"><div class="skill-fill" style="width: 90%;"></div> Skill 2</div>
@@ -105,10 +117,16 @@
   <section class="section" id="testimonials">
     <div class="container">
       <h2>Testimonials</h2>
-      <div class="testimonial">"Great work!" - Client 1</div>
-      <div class="testimonial">"Highly recommend." - Client 2</div>
-      <div class="testimonial">"Excellent service." - Client 3</div>
-    </div>
+      <div class="testimonial">"Working with Katana on our new venture was an outstanding experience. He delivered strategically focused, efficient, and well-structured software solutions that exceeded our expectations and drove us toward our core business goals. His communication, reliability, and commitment to quality truly set him apart as a business partner Co-Founder, 
+        <p> <b>— Maureen Jeptalam, Co-Founder, SmartDuo Assist</b></p>
+      </div>
+
+      <div class="testimonial">"Collaborating with Katana has been a major improvement to our project group. His clarity, dedication, and fresh approach to solving technical challenges made our collaboration smooth and highly productive. I’m always impressed by his ability to abstract complicated ideas and turn them into simple, maintainable solutions
+" <p><b>— Anne Mwangi, Cohort Member, Power Learn Project</b></p>
+</div>
+   <!--<div class="testimonial">"Katana's expertise in cyber security was instrumental in safeguarding our systems. His proactive approach and thorough understanding of potential threats helped us implement robust security measures that have kept our data safe and secure." <p> — John Doe, CTO, SecureTech Solutions</p>
+    </div>-->
+      
   </section>
 
   <!-- CTA Section -->
