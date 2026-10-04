@@ -550,12 +550,11 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   /* No hamburger yet (needs JavaScript), so the links wrap under the logo */
+  
   .navbar .container { flex-direction: column; gap: 0.6rem; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.2rem; font-size: 0.9rem; }
 
-  /* Order matters: when two rules have equal weight, the LATER one wins.
-     .section must come BEFORE .hero or it overwrites the hero's top padding
-     (which clears the fixed navbar). */
+
   .section { padding: 70px 0; }
   .hero { padding: 210px 0 70px; }
   .hero h1 { font-size: 2.4rem; }
