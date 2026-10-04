@@ -59,7 +59,10 @@
         right: 0;
 
         width: min(80%, 320px);
+        max-width: 320px;
         height: 100vh;
+
+        box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
@@ -67,18 +70,18 @@
         padding: 100px 30px 30px;
         gap: 25px;
 
-        /* Solid white menu */
         background: #ffffff;
 
-        /* Hidden off-screen */
-        transform: translateX(100%);
+        /* Hide menu completely off screen */
+        transform: translate3d(100%, 0, 0);
 
         transition: transform 0.4s ease;
 
-        /* Above the dark overlay */
         z-index: 1003;
 
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    
+
     }
 
 
@@ -129,7 +132,7 @@
 
         background: rgba(0, 0, 0, 0.55);
 
-        opacity: 0;
+        opacity: 1;
         visibility: hidden;
 
         transition:
@@ -305,3 +308,12 @@
 .faq[open] summary::after { content: '−'; }
 
 .faq p { margin-top: 0.8rem; color: var(--muted); }
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
