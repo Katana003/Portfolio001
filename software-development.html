@@ -3,118 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Software development services by Katana Ngumbao: web apps with Node.js, Express and MySQL, mobile apps with Flutter, and database design.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content=" default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
-  <!-- metas -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Content-Security-Policy"content="default-src 'self'; script-src 'self'">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Software Development</title>
+  <title>Software Development | Katana Ngumbao</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/web.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar  -->
-     <nav class="navbar">
-  <div class="container">
-    <div class="logo">Katana</div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
+
+  <!-- ============ NAVBAR  ============ -->
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
 </nav>
 
-  <!-- Hero Section -->
-  <section class="hero section">
-    <div class="container">
-      <h1>Software Development</h1>
-      <p>Your expertise in building reliable software.</p>
-      <img src="images/sd-graphic.jpg" alt="Relevant Image">
-    </div>
-  </section>
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
-  <!-- Features List Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Core Services</h2>
-      <div class="features">
-        <div class="feature-card">Web Apps: Desc with icon.</div>
-        <div class="feature-card">Mobile Apps: Desc with icon.</div>
-        <div class="feature-card">Automation Tools: Desc with icon.</div>
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Software <span class="accent">Development</span></h1>
+        <h2>Reliable web and mobile software, built around your goals.</h2>
+
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">Book a Discovery Call</a>
+          <a href="#services" class="btn btn-outline">See Services</a>
+        </div>
+        <img src="/assets/code editor.png" alt="Code editor and mobile app illustration" class="hero-image" width="1200" height="675">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- How It Works Section -->
-  <section class="section">
-    <div class="container">
-      <h2>How It Works</h2>
-      <ol>
-        <li>Discovery & Planning</li>
-        <li>Development & Testing</li>
-        <li>Deployment & Support</li>
-      </ol>
-    </div>
-  </section>
+    <!-- ============ CORE SERVICES (glowing cards) ============ -->
 
-  <!-- Testimonial Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Testimonials</h2>
-      <div class="testimonial">"Built my app perfectly." - Client 1</div>
-      <div class="testimonial">"On time and budget." - Client 2</div>
-    </div>
-  </section>
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Core Services</h2>
+        <div class="features">
 
-  <!-- Portfolio List Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Selected Projects</h2>
-      <div class="portfolio-list">
-        <div class="portfolio-item"><img src="images/sd-project1.jpg" alt=""><p>Desc (link to case study).</p></div>
-        <!-- Add more -->
+          <div class="feature-card card-dev">
+            <span class="card-icon">🌐</span>
+            <h3>Websites &amp; Web Apps</h3>
+            <p>Responsive websites and full web applications, built with HTML, CSS and JavaScript on the front end and Node.js, Express and MySQL on the back end.</p>
+          </div>
+
+          <div class="feature-card card-va">
+            <span class="card-icon">📱</span>
+            <h3>Mobile Apps</h3>
+            <p>Cross-platform mobile apps built with Flutter and Dart: one codebase for both Android and iOS.</p>
+          </div>
+
+          <div class="feature-card card-sec">
+            <span class="card-icon">🗄️</span>
+            <h3>Database Design &amp; Management</h3>
+            <p>Well-structured MySQL databases that store your data reliably, plus the queries and management to keep them fast and tidy.</p>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta section">
-    <div class="container">
-      <h2>Book a Discovery Call</h2>
-      <button>Request Quote</button>
-    </div>
-  </section>
+    <!-- ============ TECH STACK ============ -->
 
-  <!-- Footer (paste) -->
-    <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Technologies I Use</h2>
+        <ul class="tech-chips">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>MySQL</li>
+          <li>Dart</li>
+          <li>Flutter</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step"><span class="step-number">1</span><h3>Discovery &amp; Planning</h3><p>We define your goals, users and features, then agree on scope and timeline before any code is written.</p></div>
+          <div class="step"><span class="step-number">2</span><h3>Development &amp; Testing</h3><p>I build in stages, share progress along the way, and test each part so problems are caught early.</p></div>
+          <div class="step"><span class="step-number">3</span><h3>Deployment &amp; Support</h3><p>I launch your project, hand it over clearly, and stay available to fix and improve it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED PROJECTS (fill in with real projects) ============ -->
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="lead">Case studies are on the way. Each will show the problem, what I built and the technologies used.</p>
+
+        <!--
+          HOW TO ADD A REAL PROJECT: copy one .project block, delete the "project-soon" class,
+          add a screenshot in images/, and fill in the title, description, tags and link.
+          Only show projects you really built.
+        -->
+        <div class="projects">
+
+          <article class="project project-soon">
+            <div class="project-thumb">Screenshot coming soon</div>
+            <div class="project-body">
+              <h3>Project Name</h3>
+              <p>  Problem solved .</p>
+              <ul class="project-tags"><li>Node.js</li><li>Express</li><li>MySQL</li></ul>
+            </div>
+          </article>
+
+          <article class="project project-soon">
+            <div class="project-thumb">Screenshot coming soon</div>
+            <div class="project-body">
+              <h3>Project Name</h3>
+              <p>Problem solved.</p>
+              <ul class="project-tags"><li>Flutter</li><li>Dart</li></ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL  ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Kind Words</h2>
+
+        <div class="testimonial">
+          “Working with Katana on our new venture was an outstanding experience. He delivered strategically focused, efficient, and well-structured software solutions that exceeded our expectations and drove us toward our core business goals. His communication, reliability, and commitment to quality truly set him apart as a business partner.”
+          <div class="author">
+            <img src="/assets/Maureen--.png" alt="Maureen Jeptalam" class="avatar" width="600" height="600" loading="lazy">
+            <div><strong>Maureen Jeptalam</strong><span>Co-Founder, SmartDuo Assist</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+
+    <section class="cta section" id="cta">
+      <div class="container">
+        <h2>Book a Discovery Call</h2>
+        <p>Tell me about your idea and let's plan how to build it.</p>
+        <a href="contact.html" class="btn">Request Quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+   
+  <footer class="footer">
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
   </footer>
-</body>
 
+</body>
 </html>
- 

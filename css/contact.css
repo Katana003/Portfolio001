@@ -1,0 +1,322 @@
+/* =====================================================================
+   contact.css - styles ONLY used on contact.html
+   Loads AFTER styles.css, so it reuses its variables (--cyan, --green...)
+   and shared pieces (.btn, .steps-like cards, .footer, the --glow card colours).
+   ===================================================================== */
+/* ========================================
+   MOBILE HAMBURGER MENU
+   ======================================== */
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
+
+/* The three hamburger lines */
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 5px 0;
+    background: currentColor;
+    border-radius: 10px;
+    transition: 
+        transform 0.3s ease,
+        opacity 0.2s ease;
+}
+
+
+/* ========================================
+   MOBILE ONLY
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Navigation menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: min(80%, 320px);
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 100px 30px 30px;
+        gap: 25px;
+
+        background: #ffffff;
+
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1001;
+
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* Menu is open */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+
+    /* Navigation links */
+    .nav-links a {
+        font-size: 18px;
+        text-decoration: none;
+
+        opacity: 0;
+        transform: translateX(30px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    /* Animate links when menu opens */
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    /* Stagger the links */
+    .nav-links.active a:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    .nav-links.active a:nth-child(2) {
+        transition-delay: 0.10s;
+    }
+
+    .nav-links.active a:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+
+    .nav-links.active a:nth-child(4) {
+        transition-delay: 0.20s;
+    }
+
+    .nav-links.active a:nth-child(5) {
+        transition-delay: 0.25s;
+    }
+
+    .nav-links.active a:nth-child(6) {
+        transition-delay: 0.30s;
+    }
+
+
+    /* Dark background overlay */
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 1000;
+    }
+
+
+    /* Show overlay */
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* Turn hamburger into X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    /* Prevent page from scrolling while menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+.section-alt { background: var(--bg-soft); }
+
+/* ---------- Two-column layout: info (left) + form (right) ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;      /* the form gets slightly more room */
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info h2,
+.contact-form h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+
+.lead-left { color: var(--muted); margin-bottom: 1.8rem; }
+
+/* ---------- Info cards (email / WhatsApp / location) ---------- */
+.info-list { display: grid; gap: 1.2rem; margin-bottom: 1.8rem; }
+
+.info-card {
+  --glow: var(--cyan);                 /* same trick as the glowing cards: one variable, three colours */
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.3rem 1.5rem;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateX(6px);
+  border-color: var(--glow);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--glow) 55%, transparent);
+}
+
+.info-icon { font-size: 1.8rem; }
+.info-card h3 { font-size: 1rem; color: var(--glow); }
+.info-card a, .info-card p { color: var(--text); word-break: break-word; }   /* long emails wrap on phones */
+.info-card a:hover { text-decoration: underline; }
+
+/* WhatsApp-green button */
+.btn-whatsapp {
+  background: #25d366;
+  color: #05260f;
+}
+.btn-whatsapp:hover { box-shadow: 0 0 25px rgba(37, 211, 102, 0.7); }
+
+/* ---------- The form ---------- */
+.contact-form {
+  padding: 2.2rem;
+  background: var(--card);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: var(--radius);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+.field { margin-bottom: 1.2rem; }
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.optional { font-weight: 400; color: var(--muted); }
+
+/* One rule styles every input type: text, email, phone, dropdown and textarea */
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font: inherit;                       /* inputs ignore the page font unless told to inherit it */
+  color: var(--text);
+  background: #0a0f2b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.field textarea { resize: vertical; min-height: 120px; }
+.field ::placeholder { color: #6b7499; }
+
+/* Glow when the visitor clicks or tabs into a field */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.25), 0 0 16px rgba(34, 211, 238, 0.4);
+}
+
+/* Spam trap: pushed off-screen instead of display:none, because some bots skip hidden fields */
+.trap {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+button.btn { cursor: pointer; font: inherit; font-weight: 700; }
+.btn-block { width: 100%; margin: 0.5rem 0 0; text-align: center; }
+.form-note { margin-top: 0.8rem; font-size: 0.85rem; text-align: center; color: var(--muted); }
+
+/* ---------- What happens next: numbered steps ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  position: relative;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.step-number {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #05081a;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  box-shadow: 0 0 16px var(--cyan);
+}
+
+.step h3 { margin-bottom: 0.5rem; }
+.step p  { color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }   /* stack: info on top, form below */
+}
+
+@media (max-width: 480px) {
+  .contact-form { padding: 1.5rem 1.2rem; }
+
+  /* Smaller icon, padding and text so the full email address fits on one line */
+  .info-card { gap: 0.8rem; padding: 1.1rem 1rem; }
+  .info-icon { font-size: 1.4rem; }
+  .info-card a, .info-card p { font-size: 0.88rem; }
+}

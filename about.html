@@ -3,140 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
+  <meta name="description" content="About Katana Ngumbao: developer, virtual assistant and cyber security enthusiast, founder of KataStrike Intelligence.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <!-- All other metas (fixed spacing) -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Content-Security-Policy"content="default-src 'self'; script-src 'self'">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Resume</title>
+  <title>About Me | Katana Ngumbao</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/resume.css">
-  
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-   <nav class="navbar">
-  <div class="container">
-    <div class="logo">Katana</div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
+
+  <!-- ============ NAVBAR  ============ -->
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
 </nav>
 
-  <!-- Header Section -->
-  <section class="hero section">
-    <div class="container">
-      <h1>Full Resume</h1>
-      <p>Experience, Skills, and Achievements.</p>
-    </div>
-  </section>
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
-  <!-- About Section -->
-  <section class="about section">
-    <div class="container">
-      <h2>Professional Summary</h2>
-      <p>Comprehensive background, focus areas, values.</p>
-    </div>
-  </section>
+  <main>
 
-  <!-- Timeline Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Career Timeline</h2>
-      <div class="timeline">
-        <div class="timeline-item">Role 1, Company, Dates: Achievements.</div>
-        <div class="timeline-item">Role 2, Company, Dates: Achievements.</div>
-        <!-- Add more -->
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <h1>About <span class="accent">Me</span></h1>
+        <h2>Experience, skills and the story so far.</h2>
+        <div class="hero-buttons">
+          <a href="/pdf/Katana-Ngumbao-Resume.pdf" class="btn" download>Download Resume (PDF)</a>
+          <a href="contact.html" class="btn btn-outline">Schedule a Call</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features List Section (Skills) -->
-  <section class="section">
-    <div class="container">
-      <h2>Core Skills</h2>
-      <div class="features">
-        <div class="feature-card">Technical: List.</div>
-        <div class="feature-card">Productivity Tools: List.</div>
-        <div class="feature-card">Soft Skills: List.</div>
+    <!-- ============ PROFESSIONAL SUMMARY ============ -->
+
+    <section class="about section" id="summary">
+      <div class="container">
+        <div class="summary">
+          <img src="/assets/katana proffesional photo.jpg" alt="Portrait of Katana Ngumbao" class="summary-photo" width="600" height="600">
+
+          <div class="summary-text">
+            <h2>Professional Summary</h2>
+
+            <p>I’m Katana Ngumbao, a Developer, Virtual Assistant, and Cybersecurity Enthusiast who helps startups do more with less. I take the busywork off your plate, build clean and reliable software, and make sure security is part of the plan from day one.</p>
+            <p>As the founder of KataStrike Intelligence, a cyber safety advocacy platform, I actively research emerging threats and translate complex security concepts into simple, actionable insights.</p>
+            <p>Clients value my clear communication, continuous drive to master new technologies, and my knack for turning complicated ideas into maintainable solutions. Let’s turn your goals into something that works, scales, and stays protected.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team Section (Optional) -->
-  <section class="section">
-    <div class="container">
-      <h2>Collaborations</h2>
-      <p>Highlight mentors/teams if relevant.</p>
-    </div>
-  </section>
+    <!-- ============ CAREER TIMELINE ============ -->
 
-  <!-- Gallery Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="portfolio-list">
-        <div class="portfolio-item"><img src="images/cert1.jpg" alt="Cert 1"></div>
-        <!-- Add more -->
+    <section class="section section-alt" id="timeline">
+      <div class="container narrow">
+        <h2 class="section-title">Career Timeline</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <span class="timeline-date">March 2026 – Present</span>
+            <h3>Founder</h3>
+            <p class="timeline-org">KataStrike Intelligence</p>
+            <p>Founded a cybersecurity awareness and digital safety brand: building a go-to-market strategy, a content library and a structured 12-week awareness program, and positioning it for future partnerships and staff training.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">September 2025 – Present</span>
+            <h3>Co-Founder</h3>
+            <p class="timeline-org">SmartDuo Assist</p>
+            <p>Co-founded a virtual assistant support brand where a team delivers VA services together under one brand, and delivered well-structured software solutions for the venture.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">May – October 2024</span>
+            <h3>Software Development Bootcamp</h3>
+            <p class="timeline-org">Power Learn Project Academy</p>
+            <p>Completed the software development program and collaborated with a project group on technical challenges, turning complicated ideas into simple, maintainable solutions.</p>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Stats Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Key Metrics</h2>
-      <p>Projects shipped: 10 | Hours saved: 500 | Audits: 20</p>
-    </div>
-  </section>
+    <!-- ============ CORE SKILLS (glowing cards) ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="features">
 
-  <!-- Testimonial Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Endorsements</h2>
-      <div class="testimonial">"Outstanding professional." - Colleague</div>
-    </div>
-  </section>
+          <div class="feature-card card-dev">
+            <h3>Technical</h3>
+            <ul class="chips">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>Dart</li><li>Flutter</li><li>Database Management</li>
+            </ul>
+          </div>
 
-  <!-- CTA Section -->
-  <section class="cta section">
-    <div class="container">
-      <h2>Connect</h2>
-      <button>Download PDF</button> <button>LinkedIn</button> <button>Schedule Call</button>
-    </div>
-  </section>
+          <div class="feature-card card-va">
+            <h3>Productivity Tools</h3>
+            <ul class="chips">
+              <li>Google Workspace</li><li>Microsoft 365</li><li>Trello</li><li>Notion</li><li>Asana</li><li>ClickUp</li><li>Zapier</li><li>Make</li>
+            </ul>
+          </div>
 
-  <!-- Footer  -->
-   <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+          <div class="feature-card card-sec">
+            <h3>Soft Skills</h3>
+            <ul class="chips">
+              <li>Clear Communication</li><li>Reliability</li><li>Simplifying Complex Ideas</li><li>Fast Learning</li><li>Problem Solving</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section section-alt" id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+
+      
+        <div class="certs">
+
+          <article class="cert">
+            <img src="assets/web-dev cert.png" alt="software development certificate" class="cert-thumb">
+            <!--<span class="cert-icon">💻</span>-->
+            <div class="cert-body">
+              <h3>Software Development Bootcamp</h3>
+              <p class="cert-issuer">Power Learn Project Academy</p>
+              <p class="cert-date">May – October 2024</p>
+            </div>
+          </article>
+
+          <article class="cert">
+            <img src="assets/72-virtual-assistant-certificate-katana-ngumbao (1).png" alt="virtual assistant" class="cert-thumb">
+           <!-- <span class="cert-icon">🗂️</span> -->
+            <div class="cert-body">
+              <h3>Virtual Assistance &amp; AI Career Essentials</h3>
+              <p class="cert-issuer">ALX Africa</p>
+              <p class="cert-date">August – October 2024</p>
+            </div>
+          </article>
+
+          <article class="cert">
+             <img src="assets/crm.png" alt="CRM management" class="cert-thumb">
+           <!--<span class="cert-icon">🤝</span>--> 
+            <div class="cert-body">
+              <h3>Customer Relationship Management (CRM)</h3>
+              <p class="cert-issuer">HP Foundation Program</p>
+              <p class="cert-date">September 2024</p>
+            </div>
+          </article>
+
+          <article class="cert">
+            <img src="assets/udemy.png" alt="HTML, JavaScript & Bootstrap" class="cert-thumb">
+            <div class="cert-body">
+              <h3>HTML, JavaScript &amp; Bootstrap</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">May 2024</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AT A GLANCE  ============ -->
+
+    <section class="section" id="glance">
+      <div class="container">
+        <h2 class="section-title">At a Glance</h2>
+        <div class="stats">
+          <div class="stat"><span class="stat-number">3</span><span class="stat-label">Service Areas</span></div>
+          <div class="stat"><span class="stat-number">8</span><span class="stat-label">Technologies</span></div>
+          <div class="stat"><span class="stat-number">2</span><span class="stat-label">Ventures Founded</span></div>
+          <div class="stat"><span class="stat-number">4</span><span class="stat-label">Certifications</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENDORSEMENTS  ============ -->
+
+    <section class="section section-alt" id="endorsements">
+      <div class="container">
+        <h2 class="section-title">Endorsements</h2>
+
+        <div class="testimonial">
+          “Working with Katana on our new venture was an outstanding experience. He delivered strategically focused, efficient, and well-structured software solutions that exceeded our expectations and drove us toward our core business goals. His communication, reliability, and commitment to quality truly set him apart as a business partner.”
+          <div class="author">
+            <img src="assets/Maureen--.png" alt="Maureen Jeptalam" class="avatar" width="600" height="600" loading="lazy">
+            <div><strong>Maureen Jeptalam</strong><span>Co-Founder, SmartDuo Assist</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          “Collaborating with Katana has been a major improvement to our project group. His clarity, dedication, and fresh approach to solving technical challenges made our collaboration smooth and highly productive. I’m always impressed by his ability to abstract complicated ideas and turn them into simple, maintainable solutions.”
+          <div class="author">
+            <img src="/assets/Anne3.png" alt="Anne Mwangi" class="avatar" width="600" height="600" loading="lazy">
+            <div><strong>Anne Mwangi</strong><span>Cohort Member, Power Learn Project</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONNECT ============ -->
+
+    <section class="cta section" id="cta">
+      <div class="container">
+        <h2>Let’s Connect</h2>
+        <p>Have a project in mind? Let’s talk about it.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">Schedule a Call</a>
+          <a href="/pdf/Katana-Ngumbao-Resume.pdf" class="btn btn-outline" download>Download Resume</a>
+
+         
+            
+          <a href="https://www.linkedin.com/in/katana-ngumbao-99a612254/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+
+          <a href="https://github.com/Katana003" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER  ============ -->
+  <footer class="footer">
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

@@ -3,65 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
+  <meta name="description" content="Contact Katana Ngumbao to discuss virtual assistance, software development or cyber safety work. Book a free 15-minute call.">
 
-  <!-- All other metas (fixed spacing) -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Content-Security-Policy"content="default-src 'self'; script-src 'self'">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Portfolio Home</title>
+  <!-- ONE CSP only. Note form-action: it lists the form service that is allowed to receive
+       the form. If you switch form services later, change that address too.
+       Header-only rules (X-Frame-Options, COOP, COEP, frame-ancestors) must be set on your host. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Contact | Katana Ngumbao</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Shared styles first, then this page's styles on top -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-  <div class="container">
-    <div class="logo">Katana </div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
+
+  <!-- ============ NAVBAR (same as other pages) ============ -->
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
 </nav>
 
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
+  <main>
 
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Let’s <span class="accent">Talk</span></h1>
+        <h2>Tell me what you need. The first 15-minute call is free.</h2>
+      </div>
+    </section>
 
+    <!-- ============ CONTACT: details (left) + form (right) ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
 
+          <!-- ----- Contact details ----- -->
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p class="lead-left">Choose whichever is easiest for you. To book the free call, tell me a time that suits you and I’ll confirm it.</p>
 
-<!-- Footer -->
+            <ul class="info-list">
+              <li class="info-card card-dev">
+                <span class="info-icon">✉️</span>
+                <div>
+                  <h3>Email</h3>
+                  <a href="mailto:katanangumbao20@gmail.com">katanangumbao20@gmail.com</a>
+                </div>
+              </li>
+
+              <li class="info-card card-sec">
+                <span class="info-icon">💬</span>
+                <div>
+                  <h3>WhatsApp</h3>
+                  <a href="https://wa.me/254703874827?text=Hi%20Katana%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener noreferrer">+254 703 874 827</a>
+                </div>
+              </li>
+
+              <li class="info-card card-va">
+                <span class="info-icon">📍</span>
+                <div>
+                  <h3>Location</h3>
+                  <p>Kilifi, Kenya · working with clients online</p>
+                </div>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/254703874827?text=Hi%20Katana%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">Message me on WhatsApp</a>
+          </div>
+
+          <!-- ----- Contact form -->
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <h2>Send a Message</h2>
+
+            <input type="hidden" name="access_key" value="21168749-b60d-43bc-ab5d-a46a6bc885dc">
+            <input type="hidden" name="subject" value="New enquiry from my portfolio001 website">
+            <input type="hidden" name="from_name" value="Portfolio Website">
+
+            <!-- Spam trap: real people never see or tick this box, bots often do -->
+            <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off">
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Grace Hopper" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="yourmail@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone / WhatsApp <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+254 ..." autocomplete="tel">
+            </div>
+
+            <div class="field">
+              <label for="service">What do you need help with?</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Choose a service</option>
+                <option>Virtual Assistant</option>
+                <option>Software Development</option>
+                <option>Cyber Security Awareness &amp; Training</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="time">Preferred time for a free 15-min call <span class="optional">(optional)</span></label>
+              <input type="text" id="time" name="preferred_call_time" placeholder="e.g. Weekdays after 5pm (East Africa Time)">
+            </div>
+
+            <div class="field">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me a little about your project or what you'd like help with." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-block">Send Message</button>
+            <p class="form-note">I only use your details to reply to you.</p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT HAPPENS NEXT ============ -->
+     
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">What Happens Next</h2>
+        <div class="steps">
+          <div class="step"><span class="step-number">1</span><h3>You reach out</h3><p>Send the form or a WhatsApp message with a few details about what you need.</p></div>
+          <div class="step"><span class="step-number">2</span><h3>We talk</h3><p>I reply to arrange your free 15-minute call and learn about your goals.</p></div>
+          <div class="step"><span class="step-number">3</span><h3>You get a plan</h3><p>I share a clear plan and quote, and you decide if we’re a good fit.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER (same as other pages) ============ -->
   <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
-    <!-- When you add external links, always do this -->
-  <!-- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
   </footer>
+
+  
+  </a>
 
 </body>
 </html>
-  
-

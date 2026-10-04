@@ -3,120 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
-  <!-- All other metas (fixed spacing) -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Cyber Security</title>
+  <meta name="description" content="Cyber safety awareness, digital safety guidance and security-minded development for startups, by Katana Ngumbao, founder of KataStrike Intelligence.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Cyber Security | Katana Ngumbao</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/cyber.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar  -->
- <nav class="navbar">
-  <div class="container">
-    <div class="logo">Katana</div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+
+  <!-- ============ NAVBAR  ============ -->
+
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
 
     </div>
-  </div>
 </nav>
-  <!-- Hero Section -->
-  <section class="hero section">
-    <div class="container">
-      <h1>Cyber Security Services</h1>
-      <p>Helping startups stay secure.</p>
-      <img src="images/cs-hero.jpg" alt="Hero Image">
-    </div>
-  </section>
 
-  <!-- Feature Sections (multiple) -->
-  <section class="section">
-    <div class="container">
-      <h2>Penetration Testing</h2>
-      <p>Identify vulnerabilities before attackers do.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h2>Security Audits</h2>
-      <p>Review code, infrastructure, policies for risks.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h2>Security Automation</h2>
-      <p>Streamline checks and incident response.</p>
-    </div>
-  </section>
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
-  <!-- Features List Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Additional Offerings</h2>
-      <div class="features">
-        <div class="feature-card">Vulnerability Assessments</div>
-        <div class="feature-card">Employee Training</div>
-        <div class="feature-card">Incident Response Planning</div>
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <span class="hero-badge">Founder, KataStrike Intelligence</span>
+        <h1>Cyber <span class="accent">Security</span></h1>
+        <h2>Helping startups stay secure, with cyber safety made simple.</h2>
+
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">Book a Free Consultation</a>
+          <a href="#services" class="btn btn-outline">See What I Offer</a>
+        </div>
+        <img src="/assets/katastrike.png" alt="Shield with a padlock representing cyber security" class="hero-image" width="1200" height="675">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="section">
-    <div class="container">
-      <h2>FAQ</h2>
-      <p>Q: How often to test? A: Quarterly.</p>
-      <p>Q: Work with remote teams? A: Yes.</p>
-    </div>
-  </section>
+    <!-- ============ WHAT I OFFER ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">What I Offer</h2>
+        <p class="lead">Practical security help for startups and small teams: clear, honest and jargon-free.</p>
 
-  <!-- Testimonial Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Testimonial</h2>
-      <div class="testimonial">"Improved our security posture." - Client</div>
-    </div>
-  </section>
+        <div class="features features-4">
 
-  <!-- CTA Section -->
-  <section class="cta section">
-    <div class="container">
-      <h2>Book a Free 15-Min Consultation</h2>
-      <button>Get Custom Quote</button>
-    </div>
-  </section>
+          <div class="feature-card card-sec">
+            <span class="card-icon">🎓</span>
+            <h3>Security Awareness &amp; Training</h3>
+            <p>Workshops that teach your team to spot phishing, scams and risky habits before they turn into incidents.</p>
+          </div>
 
-  <!-- Footer  -->
-   <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+          <div class="feature-card card-va">
+            <span class="card-icon">🔐</span>
+            <h3>Digital Safety Guidance</h3>
+            <p>Hands-on help with strong passwords, two-factor authentication, safe device settings and everyday online safety.</p>
+          </div>
+
+          <div class="feature-card card-dev">
+            <span class="card-icon">🔍</span>
+            <h3>Threat Research &amp; Briefings</h3>
+            <p>Plain-language write-ups of emerging threats, so you know what matters and what to do about it.</p>
+          </div>
+
+          <div class="feature-card card-sec">
+            <span class="card-icon">🛡️</span>
+            <h3>Secure-by-Design Development</h3>
+            <p>Web and mobile apps built with security in mind from day one, rather than patched in later.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KATASTRIKE INTELLIGENCE ============ -->
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="brand-card">
+          <div class="brand-logo">KS</div>
+          <div class="brand-text">
+            <h2>KataStrike Intelligence</h2>
+            <p>I founded KataStrike Intelligence as a cyber safety advocacy platform. There I research emerging threats and translate complex security concepts into simple, actionable insights that anyone can use to stay safer online.</p>
+            <!-- When KataStrike has a page, uncomment and add the real link:
+            <a href="https://YOUR-KATASTRIKE-LINK" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit KataStrike</a>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CYBER SAFETY HABITS (shows your awareness expertise) ============ -->
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">5 Habits That Block Most Attacks</h2>
+        <p class="lead">You don't need a big budget to be safer. Start here.</p>
+
+        <div class="habits">
+          <div class="habit"><span class="habit-icon">🔑</span><h3>Unique passwords</h3><p>Use a password manager so every account has its own strong password.</p></div>
+          <div class="habit"><span class="habit-icon">📲</span><h3>Two-factor login</h3><p>Turn on 2FA everywhere it is offered, especially email and banking.</p></div>
+          <div class="habit"><span class="habit-icon">🎣</span><h3>Think before you click</h3><p>Pause on urgent emails, unexpected attachments and links you didn't ask for.</p></div>
+          <div class="habit"><span class="habit-icon">🔄</span><h3>Keep things updated</h3><p>Install updates for your phone, laptop and apps; many fix known security holes.</p></div>
+          <div class="habit"><span class="habit-icon">💾</span><h3>Back up your data</h3><p>Keep copies in a separate place so one mistake or attack can't wipe you out.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW I WORK ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">How I Work</h2>
+        <div class="steps">
+          <div class="step"><span class="step-number">1</span><h3>Understand</h3><p>We look at how you work, what you need to protect and where the biggest risks are.</p></div>
+          <div class="step"><span class="step-number">2</span><h3>Advise &amp; Train</h3><p>I explain the risks in plain language and give your team clear, practical steps to follow.</p></div>
+          <div class="step"><span class="step-number">3</span><h3>Support</h3><p>I stay available for questions and share updates as new threats emerge.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ALWAYS LEARNING  ============ -->
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="learning-note">
+          <h2>Always Learning, Always Honest</h2>
+          <p>Cyber security moves fast, and I keep learning and researching every day. I only take on work I can do well. For specialised services such as penetration testing, I'll say so plainly and point you to a certified professional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-alt">
+      <div class="container narrow">
+        <h2 class="section-title">FAQ</h2>
+
+        <details class="faq">
+          <summary>Why does a small startup need cyber security?</summary>
+          <p>Attackers often target small businesses because they assume the defences are weaker. Basic habits such as strong passwords, 2FA, updates and backups stop many common attacks.</p>
+        </details>
+
+        <details class="faq">
+          <summary>How often should my team get security training?</summary>
+          <p>Training works best as a regular refresher rather than a one-off, and whenever a new type of scam or threat starts affecting businesses like yours.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Do you offer penetration testing?</summary>
+          <p>Not at the moment. My focus is awareness, guidance, research and secure development. If you need specialised testing, I can point you to qualified professionals.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Can you work with remote teams?</summary>
+          <p>Yes. Training, consultations and guidance can all be done online.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+     
+    <section class="cta section" id="cta">
+      <div class="container">
+        <h2>Book a Free 15-Min Consultation</h2>
+        <p>Tell me about your team and let's make it harder for attackers.</p>
+        <a href="contact.html" class="btn">Get Custom Quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER (same as other pages) ============ -->
+  <footer class="footer">
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

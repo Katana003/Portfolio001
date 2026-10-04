@@ -1,5 +1,16 @@
-/* ====================== MODERN PORTFOLIO CSS - NAVY BLUE NAVBAR (#000080) ====================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #070a1a;            /* page background (very dark navy) */
+  --bg-soft: #0d1230;       /* slightly lighter sections */
+  --card: #101736;          /* card background */
+  --text: #e6e9f5;          /* main text */
+  --muted: #9aa3c7;         /* softer text */
+  --cyan: #22d3ee;
+  --purple: #a855f7;
+  --green: #34d399;
+  --gold: #ffd700;
+  --radius: 18px;
+}
 
 * {
   margin: 0;
@@ -7,43 +18,209 @@
   box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Inter', sans-serif;
-  background: #fafafa;
-  color: #222;
+  font-family: 'Inter', system-ui, sans-serif;  
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
 }
 
-/* Container */
-.container {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
 
-/* Navbar - Navy Blue #000080 */
+/* ---------- 3. NAVBAR ---------- */
+/* ========================================
+   MOBILE HAMBURGER MENU
+   ======================================== */
+
+/* Navbar must stay above the overlay */
 .navbar {
-  background: #05052b;                     /* Your requested navy blue */
-  backdrop-filter: blur(12px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 128, 0.3);
-  transition: all 0.3s ease;
+    position: relative;
+    z-index: 1002;
 }
 
-.navbar.scrolled {
-  background: rgba(0, 0, 128, 0.98);
-  padding: 0.8rem 0;
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1004;
+}
+
+
+/* Three hamburger lines */
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 5px 0;
+
+    background: currentColor;
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.2s ease;
+}
+
+
+/* ========================================
+   MOBILE ONLY
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Show hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* ================================
+       MOBILE NAVIGATION MENU
+       ================================ */
+
+    .nav-links {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: min(80%, 320px);
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 100px 30px 30px;
+        gap: 25px;
+
+        /* Solid white menu */
+        background: #ffffff;
+
+        /* Hidden off-screen */
+        transform: translateX(100%);
+
+        transition: transform 0.4s ease;
+
+        /* Above the dark overlay */
+        z-index: 1003;
+
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ================================
+       OPEN MENU
+       ================================ */
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+
+    /* ================================
+       NAVIGATION LINKS
+       ================================ */
+
+    .nav-links a {
+        font-size: 18px;
+
+        color: #111827;
+        text-decoration: none;
+
+        /* Keep links clearly visible */
+        opacity: 1;
+
+        transform: translateX(0);
+
+        transition:
+            color 0.2s ease,
+            transform 0.3s ease;
+    }
+
+
+    /* Optional hover effect */
+    .nav-links a:hover {
+        color: #007c91;
+    }
+
+
+    /* ================================
+       DARK OVERLAY
+       ================================ */
+
+    .menu-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        /* Behind the menu */
+        z-index: 1000;
+    }
+
+
+    /* Show overlay */
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* ================================
+       HAMBURGER → X
+       ================================ */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    /* ================================
+       PREVENT BACKGROUND SCROLLING
+       ================================ */
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+
+.navbar {
+  position: sticky;              
+  top: 0; left: 0; right: 0;
+  z-index: 1002;                /* sits above everything else */
+  padding: 1rem 0;
+  background: rgba(7, 10, 26, 0.85);
+  backdrop-filter: blur(12px);  
+  border-bottom: 1px solid rgba(34, 211, 238, 0.15);
 }
 
 .navbar .container {
-  display: flex;
+  display: flex;                        /* flexbox: logo left, links right */
   justify-content: space-between;
   align-items: center;
 }
@@ -51,261 +228,337 @@ body {
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #ffd700;
+  color: var(--gold);
   letter-spacing: 1px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-}
+.nav-links { display: flex; gap: 2rem; }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.05rem;
   position: relative;
+  font-weight: 500;
+  color: var(--text);
   transition: color 0.3s ease;
 }
 
+/* The animated underline: an empty ::after box that grows on hover */
 .nav-links a::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -8px;
-  left: 0;
-  background: #ffd700;
-  transition: width 0.4s ease;
+  left: 0; bottom: -6px;
+  width: 0; height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  transition: width 0.35s ease;
 }
 
-.nav-links a:hover {
-  color: #ffd700;
+.nav-links a:hover,
+.nav-links a.active { color: var(--cyan); }
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* ---------- 4. LAYOUT ---------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+.section { padding: 100px 0; }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 28px;
-  height: 3px;
-  background: #ffd700;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Hero & Sections */
-.section {
-  padding: 100px 0;
-}
-
-.hero {
-  padding: 160px 0 110px;
+.section-title {
   text-align: center;
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-  color: white;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- 5. HERO ---------- */
+.hero {
+  padding: 160px 0 100px;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  
+  /* Two soft coloured glows layered over a dark gradient */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.20), transparent 45%),
+    linear-gradient(180deg, #0a1030 0%, var(--bg) 100%);
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('data:image/svg+xml,...') center/cover; /* Optional subtle pattern */
-  opacity: 0.05;
-}
-
-.hero h1 {
-  font-size: 3.8rem;
-  margin-bottom: 1rem;
-  animation: fadeUp 1s ease;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.hero h2 {
-  font-size: 1.9rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
-}
-
-/* Cards Grid - Responsive */
-.features,
-.portfolio-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.feature-card,
-.portfolio-item {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.feature-card:hover,
-.portfolio-item:hover {
-  transform: translateY(-12px) scale(1.04);
-  box-shadow: 0 25px 50px rgba(255, 182, 193, 0.5); /* Pinkish glow on hover */
-}
-
-.feature-card img,
-.portfolio-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.feature-card:hover img,
-.portfolio-item:hover img {
-  transform: scale(1.12);
-}
-
-.card-content {
-  padding: 1.8rem;
+/* Photo (left) + text (right). Flexbox puts them side by side. */
+.hero-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
   text-align: left;
 }
 
-.card-content h3 {
-  font-size: 1.5rem;
+.profile-photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--cyan);
+  box-shadow: 0 0 20px var(--cyan), 0 0 60px rgba(168, 85, 247, 0.45);
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-intro .hero-text { margin: 0; }   /* left-align next to the photo */
+
+.hero h1 {
+  font-size: 3.4rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.9s ease both;
+}
+
+.accent {
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;   /* clip the gradient to the letters */
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  animation: fadeUp 0.9s ease 0.3s both;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- 6. CARDS + GLOW HOVER ----------
+   One grid is shared by the hero cards and the Core Offerings cards.
+   auto-fit + minmax = as many columns as fit, each at least 280px wide,
+   so it becomes 3 columns on desktop and 1 on phones with no media query. */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: stretch;      /* every card in a row gets the same height */
+}
+
+.feature-card {
+  --glow: var(--cyan);       /* each card overrides this colour below */
+  display: flex;
+  flex-direction: column;    /* stack content vertically */
+  text-align: left;
+  padding: 2rem;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Colour for each card: this is what makes the glow match its topic */
+.card-va  { --glow: var(--cyan); }
+.card-dev { --glow: var(--purple); }
+.card-sec { --glow: var(--green); }
+
+/* THE GLOW: layered box-shadows. The first is a tight bright ring,
+   the others are wider, softer halos. */
+.feature-card:hover,
+.feature-card:focus-visible {
+  transform: translateY(-10px);
+  border-color: var(--glow);
+  box-shadow:
+    0 0 10px var(--glow),
+    0 0 30px color-mix(in srgb, var(--glow) 55%, transparent),
+    0 0 60px color-mix(in srgb, var(--glow) 30%, transparent);
+  outline: none;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
   margin-bottom: 0.8rem;
-  color: #1e293b;
+  color: var(--glow);
 }
 
-.card-content p {
-  color: #64748b;
-  font-size: 1rem;
+.feature-card p { color: var(--muted); }
+
+/* "Learn More" is pushed to the bottom so all links line up across cards */
+.card-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-weight: 600;
+  color: var(--glow);
+}
+.card-link:hover { text-decoration: underline; }
+
+/* Hero card pieces */
+.pill {
+  align-self: flex-start;
+  padding: 0.35rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--glow);
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--glow);
 }
 
-/* Buttons */
+.skill-list li {
+  padding: 0.35rem 0 0.35rem 1.4rem;
+  position: relative;
+  color: var(--muted);
+}
+
+.skill-list li::before {           /* custom bullet */
+  content: '';
+  position: absolute;
+  left: 0; top: 1.05em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--glow);
+  box-shadow: 0 0 8px var(--glow);
+}
+
+/* ---------- 7. BUTTONS ---------- */
 .btn {
   display: inline-block;
-  background: #ffd700;
-  color: #000080;
-  padding: 14px 36px;
+  padding: 14px 34px;
   border-radius: 50px;
   font-weight: 700;
-  text-decoration: none;
-  margin: 1rem 0.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-  font-size: 1.05rem;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  color: #05081a;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background: #ffeb3b;
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
 }
 
-/* Testimonials */
-.testimonial {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.btn-outline:hover { box-shadow: 0 0 25px rgba(34, 211, 238, 0.5); }
+
+/* ---------- 8. ABOUT ---------- */
+.about { background: var(--bg-soft); text-align: center; }
+
+.about-text {
   max-width: 700px;
-  margin: 3rem auto;
-  font-style: italic;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* ---------- 9. TESTIMONIALS ---------- */
+.testimonial {
   position: relative;
-  border-left: 5px solid #ffd700;
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  padding: 2.2rem;
+  background: var(--card);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  font-style: italic;
+  color: var(--text);
 }
 
-.testimonial::before {
-  content: '“';
-  font-size: 8rem;
-  color: #ffd700;
-  opacity: 0.15;
-  position: absolute;
-  top: -30px;
-  left: 20px;
-  font-family: Georgia, serif;
+/* Author row: round photo on the left, name + role stacked on the right */
+.testimonial .author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-style: normal;
 }
 
-/* CTA Section */
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;              
+  object-fit: cover;               /* crop to fill without stretching */
+  flex-shrink: 0;                  /* never let the row squash the photo */
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+}
+
+.author strong { display: block; color: var(--gold); }
+.author span   { display: block; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- 10. CALL TO ACTION ---------- */
 .cta {
-  background: linear-gradient(135deg, #fecdd3 0%, #fbbf24 100%);
-  color: #1e293b;
   text-align: center;
-  padding: 90px 20px;
-  border-radius: 24px;
-  margin: 5rem 0;
-  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.25), transparent 60%),
+    var(--bg-soft);
 }
 
-/* Footer */
+.cta h2 { font-size: 2.4rem; }
+.cta p { color: var(--muted); margin: 0.5rem 0 2rem; }
+
+/* ---------- 11. FOOTER ---------- */
 .footer {
-  background: #000080;
-  color: #e2e8f0;
   text-align: center;
-  padding: 3rem 0;
+  padding: 2rem 0;
   font-size: 0.95rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer a {
-  color: #ffd700;
-  text-decoration: none;
-}
-
-/* Animations */
+/* ---------- 12. ANIMATION ----------
+   "both" keeps the start state before the animation and the end state after. */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up { animation: fadeUp 0.9s ease forwards; }
+/* Respect people who turn animations off in their OS settings */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
 
-/* ====================== RESPONSIVE ====================== */
+/* ---------- 13. RESPONSIVE ----------
+   Media queries apply only when the screen is narrower than the value. */
 @media (max-width: 992px) {
-  .hero h1 { font-size: 3.2rem; }
-  .hero h2 { font-size: 1.6rem; }
+  .hero-intro { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .hero-intro .hero-text { margin: 0 auto; }
+  .profile-photo { width: 180px; height: 180px; }
+  .hero h1 { font-size: 3rem; }
+  .hero h2 { font-size: 1.35rem; }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    background: #000080;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: left 0.4s ease;
-    gap: 3rem;
-  }
+  /* No hamburger yet (needs JavaScript), so the links wrap under the logo */
+  .navbar .container { flex-direction: column; gap: 0.6rem; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.2rem; font-size: 0.9rem; }
 
-  .nav-links.active { left: 0; }
-
-  .menu-toggle { display: flex; }
-
-  .hero { padding: 140px 0 90px; }
-  .hero h1 { font-size: 2.8rem; }
-  .section { padding: 80px 0; }
+  /* Order matters: when two rules have equal weight, the LATER one wins.
+     .section must come BEFORE .hero or it overwrites the hero's top padding
+     (which clears the fixed navbar). */
+  .section { padding: 70px 0; }
+  .hero { padding: 210px 0 70px; }
+  .hero h1 { font-size: 2.4rem; }
+  .section-title, .cta h2 { font-size: 2rem; }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2.4rem; }
-  .hero h2 { font-size: 1.4rem; }
-  .container { padding: 0 15px; }
-  .features, .portfolio-list { gap: 1.5rem; }
-  .btn { padding: 12px 28px; font-size: 1rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.15rem; }
+  .features { gap: 1.5rem; }
 }

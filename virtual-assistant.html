@@ -3,119 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virtual assistant services for startups by Katana Ngumbao: calendar and inbox management, research, data entry and workflow automation.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-   <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
+  <title>Virtual Assistant | Katana Ngumbao</title>
 
-  <!-- metas -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>Virtual Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/virtual.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar  -->
-    <nav class="navbar">
-  <div class="container">
-    <div class="logo">Your Name</div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
+
+  <!-- ============ NAVBAR  ============ -->
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
 </nav>
-  <!-- Hero Section -->
-  <section class="hero section">
-    <div class="container">
-      <h1>Virtual Assistant</h1>
-      <p>Delegate, focus, and thrive with a modern VA.</p>
-      <img src="images/va-image.jpg" alt="Professional Image" style="width: 100%; max-width: 600px;">
-    </div>
-  </section>
 
-  <!-- Feature Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Core Benefit</h2>
-      <p>Delegate your busywork and focus on what matters most—let me handle scheduling, inboxes, research, and more.</p>
-    </div>
-  </section>
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
+  <main>
 
-  <!-- Features List Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Main Services</h2>
-      <div class="features">
-        <div class="feature-card">Calendar & Inbox Management: Brief desc.</div>
-        <div class="feature-card">Online Research & Data Entry: Brief desc.</div>
-        <div class="feature-card">Workflow Automation: Brief desc.</div>
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Virtual <span class="accent">Assistant</span></h1>
+        <h2>Delegate, focus, and thrive with a modern VA.</h2>
+
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">Book a Free Call</a>
+          <a href="#services" class="btn btn-outline">See Services</a>
+        </div>
+
+        <img src="/assets/workspace.png" alt="Organised workspace with calendar and inbox" class="hero-image" width="1200" height="675">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Benefits Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Benefits for Startups</h2>
-      <p>More time, less stress, better productivity.</p>
-    </div>
-  </section>
+    <!-- ============ CORE BENEFIT ============ -->
 
-  <!-- Testimonial Section -->
-  <section class="section">
-    <div class="container">
-      <h2>Testimonials</h2>
-      <div class="testimonial">"Helped me focus!" - Founder 1</div>
-      <div class="testimonial">"Great automation." - Client 2</div>
-    </div>
-  </section>
+    <section class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Core Benefit</h2>
+        <p class="lead">Delegate your busywork and focus on what matters most. I handle scheduling, inboxes, research and more, so your day goes to growing the business.</p>
+      </div>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="section">
-    <div class="container">
-      <h2>FAQ</h2>
-      <p>Q: What tools do you use? A: Google Workspace, etc.</p>
-      <p>Q: How do you ensure privacy? A: Strict protocols.</p>
-      <p>Q: Can you automate workflows? A: Yes, with scripts.</p>
-    </div>
-  </section>
+    <!-- ============ MAIN SERVICES  ============ -->
 
-  <!-- CTA Section -->
-  <section class="cta section">
-    <div class="container">
-      <h2>Book a Free 15-Min Call</h2>
-      <button>Discuss VA Needs</button>
-    </div>
-  </section>
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <h2 class="section-title">Main Services</h2>
+        <div class="features">
 
-  <!-- Footer  -->
-   <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
+          <div class="feature-card card-va">
+            <h3>Calendar &amp; Inbox Management</h3>
+            <p>I keep your calendar conflict-free and your inbox organised: sorting email, drafting replies and scheduling meetings, so nothing slips through.</p>
+          </div>
+
+          <div class="feature-card card-dev">
+            <h3>Online Research &amp; Data Entry</h3>
+            <p>Market and competitor research, lead lists and accurate data entry, delivered in clean, easy-to-use spreadsheets and documents.</p>
+          </div>
+
+          <div class="feature-card card-sec">
+            <h3>Workflow Automation</h3>
+            <p>I turn repetitive tasks into automated workflows using tools like Zapier and Make, or simple scripts, so routine work runs on its own.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS FOR STARTUPS ============ -->
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Benefits for Startups</h2>
+        <p class="lead">More time, less stress, better productivity.</p>
+
+        <div class="benefits">
+          <div class="benefit"><span class="benefit-icon">⏱</span><h3>More Time</h3><p>Hand off the routine and get hours back for the work only you can do.</p></div>
+          <div class="benefit"><span class="benefit-icon">🧘</span><h3>Less Stress</h3><p>A reliable person keeping track of the details means fewer dropped balls.</p></div>
+          <div class="benefit"><span class="benefit-icon">🚀</span><h3>Better Productivity</h3><p>Organised systems and automation keep your team moving faster.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOLS ============ -->
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Tools I Work With</h2>
+        <ul class="tool-chips">
+          <li>Google Workspace</li>
+          <li>Microsoft 365</li>
+          <li>Trello</li>
+          <li>Notion</li>
+          <li>Asana</li>
+          <li>ClickUp</li>
+          <li>Zapier</li>
+          <li>Make</li>
+          <li>Scripts</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HOW I WORK  ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How I Work</h2>
+        <div class="steps">
+          <div class="step"><span class="step-number">1</span><h3>Discover</h3><p>We talk through your goals, your tools and what is eating your time.</p></div>
+          <div class="step"><span class="step-number">2</span><h3>Deliver</h3><p>I take on the agreed tasks with clear updates, so you always know where things stand.</p></div>
+          <div class="step"><span class="step-number">3</span><h3>Improve</h3><p>We review regularly and refine the process so it keeps getting smoother.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (click to open, no JavaScript needed) ============ -->
+    <section class="section section-alt">
+      <div class="container narrow">
+        <h2 class="section-title">FAQ</h2>
+
+        <details class="faq">
+          <summary>What tools do you use?</summary>
+          <p>Google Workspace and Microsoft 365 for email, calendars and documents; Trello, Notion, Asana or ClickUp for project tracking; and Zapier, Make or custom scripts for automation. I'm happy to work in the tools you already use.</p>
+        </details>
+
+        <details class="faq">
+          <summary>How do you keep my information private?</summary>
+          <p>I treat everything you share as confidential, access only what a task needs, and use strong passwords and two-factor authentication. I'm also happy to sign an NDA.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Can you automate workflows?</summary>
+          <p>Yes. Repetitive tasks such as form-to-spreadsheet entries, reminders and email sorting can often be automated with Zapier, Make or simple scripts.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="cta section" id="cta">
+      <div class="container">
+        <h2>Book a Free 15-Min Call</h2>
+        <p>Tell me what is taking your time and let's see how I can help.</p>
+        <a href="contact.html" class="btn">Discuss VA Needs</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER  ============ -->
+  <footer class="footer">
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

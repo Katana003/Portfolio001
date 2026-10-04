@@ -3,145 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content=" default-src 'self';
-    script-src 'self' 'nonce-random123' 'strict-dynamic';  /* Replace 'random123' with real nonce in JS if needed */
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  ">
-  <!-- All other metas  -->
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()">
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <meta http-equiv="Content-Security-Policy"content="default-src 'self'; script-src 'self'">
-  <title>Portfolio Home</title>
+  <meta name="description" content="Katana Ngumbao - Virtual Assistant, Software Developer and Cyber Security enthusiast helping startups save time, ship secure apps and stay protected.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Katana Ngumbao | Virtual Assistant, Developer &amp; Cyber Security</title>
+  <!-- Inter font: a <link> loads faster than the old CSS @import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-  <div class="container">
-    <div class="logo">Katana </div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
+
+  <!-- ============ NAVBAR ============ -->
+  <!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">Katana</a>
+
+        <!-- Mobile hamburger button -->
+        <button class="menu-toggle" id="mobile-menu"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- Navigation links -->
+        <div class="nav-links" id="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="virtual-assistant.html">Virtual Assistant</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="cyber-security.html">CyberSec</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="virtual-assistant.html">Virtual Assistant</a>
-      <a href="software-development.html">Software Development</a>
-      <a href="cyber-security.html">Cyber Security</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
 </nav>
 
-  <!-- Hero Header Section -->
-  <section class="hero section">
-    <div class="container">
-      <!--<img src="images/your-photo.jpg" alt="Your Photo" style="width: 150px; border-radius: 50%;-->
-      <h1> Hi, I’m Katana Ngumbao</h1>
-      <h2>Virtual Assistant + Developer + Cyber Security Enthusiast</h2>
-      <p>I help startups save hundreds of hours, ship secure apps, and stay protected.</p>
-      <div class="features">
-        <div class="feature-card">
-          <h3>Virtual Assistant</h3>
-          <p>Delegate tasks.</p>
-          <a href="virtual-assistant.html">Learn More</a>
-        
+<!-- Dark background behind mobile menu -->
+<div class="menu-overlay" id="menu-overlay"></div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero section">
+      <div class="container">
+        <div class="hero-intro">
+          
+          <img src="/assets/katana proffesional photo.jpg" alt="Portrait of Katana Ngumbao" class="profile-photo" width="600" height="600">
+          <div class="hero-intro-text">
+            <h1>Hi, I’m <span class="accent">Katana Ngumbao</span></h1>
+            <h2>Virtual Assistant + Developer + Cyber Security Enthusiast</h2>
+            <p class="hero-text">I help startups save hundreds of hours, ship secure apps, and stay protected.</p>
+          </div>
         </div>
-        <div class="feature-card">
-          <h3>Software Development</h3>
-          <p>Build apps.</p>
-          <a href="software-development.html">Learn More</a>
+
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">Book a Free Call</a>
+          <a href="about.html" class="btn btn-outline">View About Me</a>
         </div>
-        <div class="feature-card">
-          <h3>Cyber Security</h3>
-/          <p>Secure systems.</p>
-          <a href="cyber-security.html">Learn More</a>
+
+        <div class="features hero-cards">
+          <a href="virtual-assistant.html" class="feature-card card-va">
+            <span class="pill">Virtual Assistant</span>
+            <ul class="skill-list">
+              <li>Inbox &amp; calendar management</li>
+              <li>Data entry &amp; research</li>
+              <li>Customer support &amp; scheduling</li>
+            </ul>
+          </a>
+
+          <a href="software-development.html" class="feature-card card-dev">
+            <span class="pill">Software Development</span>
+            <ul class="skill-list">
+              <li>Responsive websites</li>
+              <li>Web apps &amp; automation</li>
+              <li>Clean, maintainable code</li>
+            </ul>
+          </a>
+
+          <a href="cyber-security.html" class="feature-card card-sec">
+            <span class="pill">Cyber Security</span>
+            <ul class="skill-list">
+              <li>Security basics &amp; awareness</li>
+              <li>Vulnerability checks</li>
+              <li>Secure setup &amp; hardening</li>
+            </ul>
+          </a>
         </div>
       </div>
-      <a href="about.html">View About Me</a>
-      <div class="skills-bar">
-        <div class="skill"><div class="skill-fill" style="width: 80%;"></div> Skill 1</div>
-        <div class="skill"><div class="skill-fill" style="width: 90%;"></div> Skill 2</div>
-        <div class="skill"><div class="skill-fill" style="width: 70%;"></div> Skill 3</div>
+    </section>
+
+    <!-- ============ CORE OFFERINGS ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title">Core Offerings</h2>
+        <div class="features">
+
+          <div class="feature-card card-va">
+            <h3>Virtual Assistant</h3>
+            <p>Delegate the busywork. I handle admin, scheduling and research so you can focus on growing your business.</p>
+            <a href="virtual-assistant.html" class="card-link">Learn More &rarr;</a>
+          </div>
+
+          <div class="feature-card card-dev">
+            <h3>Software Development</h3>
+            <p>Fast, responsive and maintainable websites and apps, built around your business goals.</p>
+            <a href="software-development.html" class="card-link">Learn More &rarr;</a>
+          </div>
+
+          <div class="feature-card card-sec">
+            <h3>Cyber Security</h3>
+            <p>Protect your data and your customers with practical, security-first thinking from day one.</p>
+            <a href="cyber-security.html" class="card-link">Learn More &rarr;</a>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features List Section -->
-  <section class="section" id="features">
-    <div class="container">
-      <h2>Core Offerings</h2>
-      <div class="features">
-        <div class="feature-card">Virtual Assistant: Short desc.<a href="#">Learn More</a></div>
-        <div class="feature-card">Software Development: Short desc.<a href="#">Learn More</a></div>
-        <div class="feature-card">Cyber Security: Short desc.<a href="#">Learn More</a></div>
+    
+    </section>
+  
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <p class="about-text">I'm Katana Ngumbao, a Developer, Virtual Assistant, and Cybersecurity Enthusiast who helps startups do more with less. I take the busywork off your plate, build clean and reliable software, and make sure security is part of the plan from day one. As the founder of Katastrike Intelligence, a cyber safety advocacy platform, I actively research emerging threats and translate complex security concepts into simple, actionable insights. Clients value my clear communication, continuous drive to master new technologies, and my knack for turning complicated ideas into maintainable solutions. Let's turn your goals into something that works, scales, and stays protected.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portfolio List Section -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <h2>Latest Work</h2>
-      <div class="portfolio-list">
-        <div class="portfolio-item"><img src="images/project-va.jpg" alt="VA Project"><p>VA Example</p></div>
-        <div class="portfolio-item"><img src="images/project-sd.jpg" alt="SD Project"><p>SD Example</p></div>
-        <div class="portfolio-item"><img src="images/project-cs.jpg" alt="CS Project"><p>CS Example</p></div>
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+
+        <div class="testimonial">
+          “Working with Katana on our new venture was an outstanding experience. He delivered strategically focused, efficient, and well-structured software solutions that exceeded our expectations and drove us toward our core business goals. His communication, reliability, and commitment to quality truly set him apart as a business partner.”
+          <div class="author">
+            <img src="/assets/Maureen--.png" alt="Maureen Jeptalam" class="avatar" width="600" height="600" loading="lazy">
+            <div><strong>Maureen Jeptalam</strong><span>Co-Founder, SmartDuo Assist</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          “Collaborating with Katana has been a major improvement to our project group. His clarity, dedication, and fresh approach to solving technical challenges made our collaboration smooth and highly productive. I’m always impressed by his ability to abstract complicated ideas and turn them into simple, maintainable solutions.”
+          <div class="author">
+            <img src="/assets/Anne3.png" alt="Anne Mwangi" class="avatar" width="600" height="600" loading="lazy">
+            <div><strong>Anne Mwangi</strong><span>Cohort Member, Power Learn Project</span></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section class="about section" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>3-4 lines intro to your background and approach.</p>
-    </div>
-  </section>
-
-  <!-- Testimonial Section -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <h2>Testimonials</h2>
-      <div class="testimonial">"Working with Katana on our new venture was an outstanding experience. He delivered strategically focused, efficient, and well-structured software solutions that exceeded our expectations and drove us toward our core business goals. His communication, reliability, and commitment to quality truly set him apart as a business partner Co-Founder, 
-        <p> <b>— Maureen Jeptalam, Co-Founder, SmartDuo Assist</b></p>
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="cta section" id="cta">
+      <div class="container">
+        <h2>Book a Free 15-Min Call</h2>
+        <p>Tell me what you need and let’s see how I can help.</p>
+        <a href="contact.html" class="btn">Discuss Your Needs</a>
       </div>
+    </section>
 
-      <div class="testimonial">"Collaborating with Katana has been a major improvement to our project group. His clarity, dedication, and fresh approach to solving technical challenges made our collaboration smooth and highly productive. I’m always impressed by his ability to abstract complicated ideas and turn them into simple, maintainable solutions
-" <p><b>— Anne Mwangi, Cohort Member, Power Learn Project</b></p>
-</div>
-   <!--<div class="testimonial">"Katana's expertise in cyber security was instrumental in safeguarding our systems. His proactive approach and thorough understanding of potential threats helped us implement robust security measures that have kept our data safe and secure." <p> — John Doe, CTO, SecureTech Solutions</p>
-    </div>-->
-      
-  </section>
+  </main>
 
-  <!-- CTA Section -->
-  <section class="cta section" id="cta">
-    <div class="container">
-      <h2>Book a Free 15-Min Call</h2>
-      <button>Discuss Your Needs</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <p>&copy; 2025 Katana Ngumbao. All rights reserved.</p>
-    <!-- When you add external links, always do this -->
-  <!-- <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
+    <p>&copy; 2026 Katana Ngumbao. All rights reserved.</p>
+    <!-- External links should always use: target="_blank" rel="noopener noreferrer" -->
   </footer>
+
 </body>
 </html>
